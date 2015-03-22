@@ -1,4 +1,4 @@
-include CHANGELOG.rst ICENSE README.rst
+include CHANGELOG.rst LICENSE README.rst
 
 recursive-include docs *
 prune docs/_build
