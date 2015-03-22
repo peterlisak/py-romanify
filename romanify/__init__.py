@@ -52,43 +52,44 @@ def roman2arabic(number):
 
             if c == mid:
                 number += ROMANS[mid]
-                c = iterator.next()
+                c = next(iterator)
                 if c == low:
                     number += ROMANS[low]
-                    c = iterator.next()
+                    c = next(iterator)
                     if c == low:
                         number += ROMANS[low]
-                        c = iterator.next()
+                        c = next(iterator)
                         if c == low:
                             number += ROMANS[low]
-                            c = iterator.next()
+                            c = next(iterator)
             elif c == low:
                 number += ROMANS[low]
-                c = iterator.next()
+                c = next(iterator)
                 if c == high:
                     number += ROMANS[high] - 2 * ROMANS[low]
-                    c = iterator.next()
+                    c = next(iterator)
                 elif c == mid:
                     number += ROMANS[mid] - 2 * ROMANS[low]
-                    c = iterator.next()
+                    c = next(iterator)
                 elif c == low:
                     number += ROMANS[low]
-                    c = iterator.next()
+                    c = next(iterator)
                     if c == low:
                         number += ROMANS[low]
-                        c = iterator.next()
+                        c = next(iterator)
         except StopIteration:
             return None, number
         else:
             return c, number
 
+    number = number.upper()
     iterator = iter(number)
     arabic = 0
-    c = iterator.next()
+    c = next(iterator)
     try:
         while c == 'M':
             arabic += ROMANS[c]
-            c = iterator.next()
+            c = next(iterator)
     except StopIteration:
         pass
     else:

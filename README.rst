@@ -20,15 +20,11 @@ See `docs/changelog.rst`_.
 
 TODO
 ----
-* unittest
 * example script
 * check doc (generate doc)
   
-  * roman/arabic convert theory
+  * roman/arabic convert theory (finite automata image)
 
-* features
-
-  * case insensitive roman numerals
 
 .. _docs/installation.rst: docs/installation.rst
 .. _docs/usage.rst: docs/usage.rst
