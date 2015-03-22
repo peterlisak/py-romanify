@@ -22,7 +22,7 @@ TODO
 ----
 * unittest
 * example script
-* check doc (python setup.py --long-description | rst2html.py > output.html)
+* check doc (generate doc)
   
   * roman/arabic convert theory
 
