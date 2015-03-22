@@ -7,13 +7,14 @@ with open('README.rst') as file:
     long_description = file.read()
 
 setup(name='py-romanify',
-      version='0.1.0',
+      version='0.1.1',
       description='Python Roman/Arabic numerals convertor',
       long_description=long_description,
       author='Peter Lisak',
       author_email='peter.lisak+pypi@gmail.com',
       url='https://github.com/peter-lisak/py-romanify',
       packages=['romanify'],
+      test_suite="tests",
       classifiers=[
           'Development Status :: 3 - Alpha',
           'Environment :: Console',

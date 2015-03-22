@@ -10,7 +10,7 @@ M=1000)
 
 ARABIC = dict((item, key) for key, item in ROMANS.items())
 
-def arabic2romans(number):
+def arabic2roman(number):
     def grammar(number, low, mid, high):
         if number == 9:
             return ARABIC[low] + ARABIC[high]
@@ -43,7 +43,7 @@ def arabic2romans(number):
 
 
 
-def romans2arabic(number):
+def roman2arabic(number):
     def grammar(c, iterator, low, mid, high):
         number = 0
         try:
