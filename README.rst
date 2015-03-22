@@ -11,12 +11,24 @@ Installation
 See `docs/installation.rst`_.
 
 Usage
-------------
+-----
 See `docs/usage.rst`_.
 
 Changelog
-------------
+---------
 See `docs/changelog.rst`_.
+
+TODO
+----
+* unittest
+* example script
+* check doc (python setup.py --long-description | rst2html.py > output.html)
+  
+  * roman/arabic convert theory
+
+* features
+
+  * case insensitive roman numerals
 
 .. _docs/installation.rst: docs/installation.rst
 .. _docs/usage.rst: docs/usage.rst
