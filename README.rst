@@ -6,8 +6,18 @@ Convertor of roman/arabic numerals
 Alpha version
 - missing tests and other stuff
 
-.. include:: docs/installation.rst
+Installation
+------------
+See `docs/installation.rst`_.
 
-.. include:: docs/usage.rst
+Usage
+------------
+See `docs/usage.rst`_.
 
-.. include:: docs/changelog.rst
+Changelog
+------------
+See `docs/changelog.rst`_.
+
+.. _docs/installation.rst: docs/installation.rst
+.. _docs/usage.rst: docs/usage.rst
+.. _docs/changelog.rst: docs/changelog.rst
