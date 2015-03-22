@@ -2,9 +2,12 @@
 
 #from distutils.core import setup
 from setuptools import setup
+import os
 
-with open('README.rst') as file:
-    long_description = file.read()
+long_description = ""
+for doc_file in ('installation.rst', 'usage.rst', 'changelog.rst'):
+    with open(os.path.join('docs', doc_file)) as file:
+        long_description += file.read()
 
 setup(name='py-romanify',
       version='0.1.1',

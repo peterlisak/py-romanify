@@ -12,3 +12,4 @@ Or from ``git``:
 
     $ git clone https://github.com/peter-lisak/py-romanify.git
     $ python setup.py install
+
