@@ -1,1 +1,2 @@
 tox
+rst2html5
