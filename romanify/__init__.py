@@ -10,9 +10,6 @@ M=1000)
 
 ARABIC = dict((item, key) for key, item in ROMANS.items())
 
-import sys
-arab = int(sys.argv[1])
-
 def arabic2romans(number):
     def grammar(number, low, mid, high):
         if number == 9:
@@ -44,11 +41,7 @@ def arabic2romans(number):
     roman += grammar(number, 1, 5, 10)
     return roman
 
-romans = arabic2romans(arab)
-print romans
 
-romans = sys.argv[2]
-romans = romans.upper()
 
 def romans2arabic(number):
     def grammar(c, iterator, low, mid, high):
@@ -112,4 +105,3 @@ def romans2arabic(number):
 
     return arabic
 
-print romans2arabic(romans)

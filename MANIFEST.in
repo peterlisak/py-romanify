@@ -1,1 +1,4 @@
-include README.rst
+include CHANGELOG.rst ICENSE README.rst
+
+recursive-include docs *
+prune docs/_build
