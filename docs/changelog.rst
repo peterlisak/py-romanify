@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+0.1.3 (2015-03-31)
+~~~~~~~~~~~~~~~~~~
+* unittest (extended)
+* python3+ support extended
+* bugfix - python3+: TypeError: can't multiply sequence by non-int of type 'float'
+
 0.1.2 (2015-03-22)
 ~~~~~~~~~~~~~~~~~~
 * unittest

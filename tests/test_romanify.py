@@ -1,5 +1,4 @@
 import unittest
-
 import romanify
 
 
@@ -15,6 +14,16 @@ class TestSimple(unittest.TestCase):
         self.assertEqual(romanify.roman2arabic('D'), 500)
         self.assertEqual(romanify.roman2arabic('M'), 1000)
 
+    def test_basic_arabic_numerals(self):
+        # basic numerals
+        self.assertEqual(romanify.arabic2roman(1), 'I')
+        self.assertEqual(romanify.arabic2roman(5), 'V')
+        self.assertEqual(romanify.arabic2roman(10), 'X')
+        self.assertEqual(romanify.arabic2roman(50), 'L')
+        self.assertEqual(romanify.arabic2roman(100), 'C')
+        self.assertEqual(romanify.arabic2roman(500), 'D')
+        self.assertEqual(romanify.arabic2roman(1000), 'M')
+
     def test_repeating_roman_numerals(self):
         # repeatinf roman numerals
         self.assertEqual(romanify.roman2arabic('II'), 2)
@@ -25,6 +34,16 @@ class TestSimple(unittest.TestCase):
         self.assertEqual(romanify.roman2arabic('CCC'), 300)
         self.assertEqual(romanify.roman2arabic('MMMMM'), 5000)
 
+    def test_repeating_arabic_numerals(self):
+        # repeatinf roman numerals
+        self.assertEqual(romanify.arabic2roman(2), 'II')
+        self.assertEqual(romanify.arabic2roman(3), 'III')
+        self.assertEqual(romanify.arabic2roman(20), 'XX')
+        self.assertEqual(romanify.arabic2roman(30), 'XXX')
+        self.assertEqual(romanify.arabic2roman(200), 'CC')
+        self.assertEqual(romanify.arabic2roman(300), 'CCC')
+        self.assertEqual(romanify.arabic2roman(5000), 'MMMMM')
+
     def test_substract_roman_syntax(self):
         # substract roman syntax
         self.assertEqual(romanify.roman2arabic('IV'), 4)
@@ -34,12 +53,32 @@ class TestSimple(unittest.TestCase):
         self.assertEqual(romanify.roman2arabic('CD'), 400) 
         self.assertEqual(romanify.roman2arabic('CM'), 900) 
 
+    def test_substract_arabic_syntax(self):
+        # substract roman syntax
+        self.assertEqual(romanify.arabic2roman(4), 'IV')
+        self.assertEqual(romanify.arabic2roman(9), 'IX')
+        self.assertEqual(romanify.arabic2roman(40), 'XL')
+        self.assertEqual(romanify.arabic2roman(90), 'XC')
+        self.assertEqual(romanify.arabic2roman(400), 'CD') 
+        self.assertEqual(romanify.arabic2roman(900), 'CM') 
+
     def test_combination_roman_numerals(self):
         # combination of roman numerals
         self.assertEqual(romanify.roman2arabic('CDXLIV'), 444)
         self.assertEqual(romanify.roman2arabic('DLV'), 555)
         self.assertEqual(romanify.roman2arabic('MCXI'), 1111)
         self.assertEqual(romanify.roman2arabic('MDCLXVI'), 1666)
+
+    def test_combination_arabic_numerals(self):
+        # combination of roman numerals
+        self.assertEqual(romanify.arabic2roman(444), 'CDXLIV')
+        self.assertEqual(romanify.arabic2roman(555), 'DLV')
+        self.assertEqual(romanify.arabic2roman(1111), 'MCXI')
+        self.assertEqual(romanify.arabic2roman(1666), 'MDCLXVI')
+
+    def test_reverse_combination(self):
+       self.assertEqual(romanify.roman2arabic(romanify.arabic2roman(123456789)), 123456789)
+       self.assertEqual(romanify.roman2arabic(romanify.arabic2roman(987654321)), 987654321)
 
     def test_low_roman_numerals(self):
         # low case

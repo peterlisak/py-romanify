@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 ROMANS = dict(
 I=1,
@@ -32,11 +33,12 @@ def arabic2roman(number):
             return ARABIC[low]
         return ""
 
-    roman = ARABIC[1000] * (number / 1000)
+    number = int(number)
+    roman = ARABIC[1000] * int(number / 1000)
     number %= 1000
-    roman += grammar((number / 100), 100, 500, 1000)
+    roman += grammar(int(number / 100), 100, 500, 1000)
     number %= 100
-    roman += grammar((number / 10), 10, 50, 100)
+    roman += grammar(int(number / 10), 10, 50, 100)
     number %= 10
     roman += grammar(number, 1, 5, 10)
     return roman

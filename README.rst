@@ -20,7 +20,10 @@ See `docs/changelog.rst`_.
 
 TODO
 ----
+* pep8
+* unittest arabic2roman
 * example script
+* doc string + help
 * check doc (generate doc)
   
   * roman/arabic convert theory (finite automata image)
