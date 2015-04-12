@@ -1,6 +1,6 @@
 Usage
 -----
-Converting numerals from roman to arabic:
+Converting numbers from roman to arabic:
 
 .. code-block:: python
     

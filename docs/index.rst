@@ -1,7 +1,7 @@
 py-romanify
 ===========
 
-Convertor of roman/arabic numerals 
+Convertor of roman/arabic numbers 
 
 .. include:: installation.rst
 

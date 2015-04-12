@@ -10,8 +10,8 @@ for doc_file in ('installation.rst', 'usage.rst', 'changelog.rst'):
         long_description += file.read()
 
 setup(name='py-romanify',
-      version='0.1.3',
-      description='Python Roman/Arabic numerals convertor',
+      version='0.1.4',
+      description='Python Roman/Arabic numbers convertor',
       long_description=long_description,
       author='Peter Lisak',
       author_email='peter.lisak+pypi@gmail.com',
@@ -19,7 +19,7 @@ setup(name='py-romanify',
       packages=['romanify'],
       test_suite="tests",
       classifiers=[
-          'Development Status :: 3 - Alpha',
+          'Development Status :: 4 - Beta',
           'Environment :: Console',
           'Intended Audience :: Developers',
           'Intended Audience :: Education',

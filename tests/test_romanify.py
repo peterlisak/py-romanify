@@ -68,6 +68,7 @@ class TestSimple(unittest.TestCase):
         self.assertEqual(romanify.roman2arabic('DLV'), 555)
         self.assertEqual(romanify.roman2arabic('MCXI'), 1111)
         self.assertEqual(romanify.roman2arabic('MDCLXVI'), 1666)
+        self.assertEqual(romanify.roman2arabic('MMMMMMDCCCXXXIII'), 6833)
 
     def test_combination_arabic_numerals(self):
         # combination of roman numerals

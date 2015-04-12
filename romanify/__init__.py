@@ -1,37 +1,50 @@
 #!/usr/bin/env python
+"""
+Roman/arabic number convertor.
+
+    * arabic2roman(number)
+    * roman2arabic(number)
+"""
 
 ROMANS = dict(
-I=1,
-V=5,
-X=10,
-L=50,
-C=100,
-D=500,
-M=1000)
+    I=1,
+    V=5,
+    X=10,
+    L=50,
+    C=100,
+    D=500,
+    M=1000)
 
 ARABIC = dict((item, key) for key, item in ROMANS.items())
 
 def arabic2roman(number):
+    """
+    Convert arabic number to roman.
+    """
     def grammar(number, low, mid, high):
+        """
+        Inner function for common convert.
+        """
+        ret = ""
         if number == 9:
-            return ARABIC[low] + ARABIC[high]
+            ret = ARABIC[low] + ARABIC[high]
         elif number == 8:
-            return ARABIC[mid] + ARABIC[low] * 3
+            ret = ARABIC[mid] + ARABIC[low] * 3
         elif number == 7:
-            return ARABIC[mid] + ARABIC[low] * 2
+            ret = ARABIC[mid] + ARABIC[low] * 2
         elif number == 6:
-            return ARABIC[mid] + ARABIC[low]
+            ret = ARABIC[mid] + ARABIC[low]
         elif number == 5:
-            return ARABIC[mid]
+            ret = ARABIC[mid]
         elif number == 4:
-            return ARABIC[low] + ARABIC[mid]
+            ret = ARABIC[low] + ARABIC[mid]
         elif number == 3:
-            return ARABIC[low] * 3
+            ret = ARABIC[low] * 3
         elif number == 2:
-            return ARABIC[low] * 2
+            ret = ARABIC[low] * 2
         elif number == 1:
-            return ARABIC[low]
-        return ""
+            ret = ARABIC[low]
+        return ret
 
     number = int(number)
     roman = ARABIC[1000] * int(number / 1000)
@@ -44,67 +57,68 @@ def arabic2roman(number):
     return roman
 
 
-
 def roman2arabic(number):
-    def grammar(c, iterator, low, mid, high):
+    """
+    Convert roman number to arabic.
+    """
+    def grammar(last_char, iterator, low, mid, high):
+        """
+        Inner function for common convert.
+        """
         number = 0
         try:
-            if c is None:
-                raise StopIteration
-
-            if c == mid:
-                number += ROMANS[mid]
-                c = next(iterator)
-                if c == low:
+            if last_char == mid:
+                number = ROMANS[mid]
+                last_char = next(iterator)
+                if last_char == low:
                     number += ROMANS[low]
-                    c = next(iterator)
-                    if c == low:
+                    last_char = next(iterator)
+                    if last_char == low:
                         number += ROMANS[low]
-                        c = next(iterator)
-                        if c == low:
+                        last_char = next(iterator)
+                        if last_char == low:
                             number += ROMANS[low]
-                            c = next(iterator)
-            elif c == low:
-                number += ROMANS[low]
-                c = next(iterator)
-                if c == high:
+                            last_char = next(iterator)
+            elif last_char == low:
+                number = ROMANS[low]
+                last_char = next(iterator)
+                if last_char == high:
                     number += ROMANS[high] - 2 * ROMANS[low]
-                    c = next(iterator)
-                elif c == mid:
+                    last_char = next(iterator)
+                elif last_char == mid:
                     number += ROMANS[mid] - 2 * ROMANS[low]
-                    c = next(iterator)
-                elif c == low:
+                    last_char = next(iterator)
+                elif last_char == low:
                     number += ROMANS[low]
-                    c = next(iterator)
-                    if c == low:
+                    last_char = next(iterator)
+                    if last_char == low:
                         number += ROMANS[low]
-                        c = next(iterator)
+                        last_char = next(iterator)
         except StopIteration:
-            return None, number
-        else:
-            return c, number
+            last_char = None
 
-    number = number.upper()
-    iterator = iter(number)
+        return last_char, number
+
+    iterator = iter(number.upper())
     arabic = 0
-    c = next(iterator)
     try:
-        while c == 'M':
-            arabic += ROMANS[c]
-            c = next(iterator)
+        last_char = next(iterator)
+        while last_char == 'M':
+            arabic += ROMANS[last_char]
+            last_char = next(iterator)
     except StopIteration:
-        pass
-    else:
-        c, partial_number = grammar(c, iterator, 'C', 'D', 'M')
+        return arabic
+
+    last_char, partial_number = grammar(last_char, iterator, 'C', 'D', 'M')
+    arabic += partial_number
+    if last_char is not None:
+        last_char, partial_number = grammar(last_char, iterator, 'X', 'L', 'C')
         arabic += partial_number
-        if c is not None:
-            c, partial_number = grammar(c, iterator, 'X', 'L', 'C')
+        if last_char is not None:
+            last_char, partial_number = grammar(last_char, iterator, 'I', 'V', 'X')
             arabic += partial_number
-            if c is not None:
-                c, partial_number = grammar(c, iterator, 'I', 'V', 'X')
-                arabic += partial_number
-                if c is not None:
-                    raise ValueError("Not a proper roman numeral")
+            if last_char is not None:
+                raise ValueError("Not a proper roman numeral")
 
     return arabic
 

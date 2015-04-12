@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+0.1.4 (2015-04-12)
+* Beta release
+* pylint (pep8)
+* doc strings
+
 0.1.3 (2015-03-31)
 ~~~~~~~~~~~~~~~~~~
 * unittest (extended)
