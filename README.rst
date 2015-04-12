@@ -21,6 +21,7 @@ See `docs/changelog.rst`_.
 TODO
 ----
 * example script
+* add build/test icons (travis-ci)
 * check doc (generate doc)
   
   * roman/arabic convert theory (finite automata image)
