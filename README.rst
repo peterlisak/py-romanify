@@ -2,6 +2,7 @@ py-romanify
 ===========
 
 Convertor of roman/arabic numerals 
+https://pypi.python.org/pypi/py-romanify
 
 Alpha version
 - missing tests and other stuff
