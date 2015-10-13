@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-#from distutils.core import setup
 from setuptools import setup
 import os
 
@@ -17,6 +16,10 @@ setup(name='py-romanify',
       author_email='peter.lisak+pypi@gmail.com',
       url='https://github.com/peter-lisak/py-romanify',
       packages=['romanify'],
+      setup_requires=[
+        "flake8",
+	"setuptools-lint"
+      ]
       test_suite="tests",
       classifiers=[
           'Development Status :: 4 - Beta',

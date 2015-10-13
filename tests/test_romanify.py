@@ -3,7 +3,7 @@ import romanify
 
 
 class TestSimple(unittest.TestCase):
-    
+
     def test_basic_roman_numerals(self):
         # basic numerals
         self.assertEqual(romanify.roman2arabic('I'), 1)
@@ -50,8 +50,8 @@ class TestSimple(unittest.TestCase):
         self.assertEqual(romanify.roman2arabic('IX'), 9)
         self.assertEqual(romanify.roman2arabic('XL'), 40)
         self.assertEqual(romanify.roman2arabic('XC'), 90)
-        self.assertEqual(romanify.roman2arabic('CD'), 400) 
-        self.assertEqual(romanify.roman2arabic('CM'), 900) 
+        self.assertEqual(romanify.roman2arabic('CD'), 400)
+        self.assertEqual(romanify.roman2arabic('CM'), 900)
 
     def test_substract_arabic_syntax(self):
         # substract roman syntax
@@ -59,8 +59,8 @@ class TestSimple(unittest.TestCase):
         self.assertEqual(romanify.arabic2roman(9), 'IX')
         self.assertEqual(romanify.arabic2roman(40), 'XL')
         self.assertEqual(romanify.arabic2roman(90), 'XC')
-        self.assertEqual(romanify.arabic2roman(400), 'CD') 
-        self.assertEqual(romanify.arabic2roman(900), 'CM') 
+        self.assertEqual(romanify.arabic2roman(400), 'CD')
+        self.assertEqual(romanify.arabic2roman(900), 'CM')
 
     def test_combination_roman_numerals(self):
         # combination of roman numerals
@@ -78,14 +78,16 @@ class TestSimple(unittest.TestCase):
         self.assertEqual(romanify.arabic2roman(1666), 'MDCLXVI')
 
     def test_reverse_combination(self):
-       self.assertEqual(romanify.roman2arabic(romanify.arabic2roman(123456789)), 123456789)
-       self.assertEqual(romanify.roman2arabic(romanify.arabic2roman(987654321)), 987654321)
+        self.assertEqual(romanify.roman2arabic(
+            romanify.arabic2roman(123456789)), 123456789)
+        self.assertEqual(romanify.roman2arabic(
+            romanify.arabic2roman(987654321)), 987654321)
 
     def test_low_roman_numerals(self):
         # low case
         self.assertEqual(romanify.roman2arabic('MDcLxVI'), 1666)
         self.assertEqual(romanify.roman2arabic('mdclxvi'), 1666)
-         
+
     def test_wrong_roman_numerals(self):
         # wrong roman numerals
         self.assertRaises(ValueError, romanify.roman2arabic, 'yc')
@@ -104,7 +106,7 @@ class TestSimple(unittest.TestCase):
         self.assertRaises(ValueError, romanify.roman2arabic, 'VD')
         self.assertRaises(ValueError, romanify.roman2arabic, 'LM')
         self.assertRaises(ValueError, romanify.roman2arabic, 'DM')
-        
+
     def test_repeating_roman_numerals_error(self):
         # too much numeral repeating
         self.assertRaises(ValueError, romanify.roman2arabic, 'IIII')
