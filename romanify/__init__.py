@@ -17,6 +17,7 @@ ROMANS = dict(
 
 ARABIC = dict((item, key) for key, item in ROMANS.items())
 
+
 def arabic2roman(number):
     """
     Convert arabic number to roman.
@@ -115,10 +116,10 @@ def roman2arabic(number):
         last_char, partial_number = grammar(last_char, iterator, 'X', 'L', 'C')
         arabic += partial_number
         if last_char is not None:
-            last_char, partial_number = grammar(last_char, iterator, 'I', 'V', 'X')
+            last_char, partial_number = grammar(last_char, iterator,
+                                                'I', 'V', 'X')
             arabic += partial_number
             if last_char is not None:
                 raise ValueError("Not a proper roman numeral")
 
     return arabic
-
