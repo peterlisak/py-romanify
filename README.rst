@@ -1,7 +1,22 @@
 py-romanify
 ===========
-.. image:: https://travis-ci.org/peterlisak/py-romanify.svg?branch=master
+.. image:: https://img.shields.io/travis/peterlisak/py-romanify.svg?branch=master
     :target: https://travis-ci.org/peterlisak/py-romanify
+  
+.. image:: https://img.shields.io/pypi/status/py-romanify.svg       
+    :target: https://pypi.python.org/pypi/py-romanify
+    
+.. image:: https://img.shields.io/pypi/v/py-romanify.svg   
+    :target: https://pypi.python.org/pypi/py-romanify/0.1.4
+    
+.. image:: https://img.shields.io/pypi/pyversions/py-romanify.svg   
+    :target: https://pypi.python.org/pypi/py-romanify
+    
+.. image:: https://img.shields.io/pypi/l/py-romanify.svg   
+    :target: https://pypi.python.org/pypi/py-romanify
+    
+.. image:: https://img.shields.io/pypi/dw/py-romanify.svg   
+    :target: https://pypi.python.org/pypi/py-romanify
 
 Convertor of roman/arabic numerals 
 https://pypi.python.org/pypi/py-romanify
