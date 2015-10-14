@@ -1,5 +1,7 @@
 py-romanify
 ===========
+.. image:: https://travis-ci.org/peterlisak/py-romanify.svg?branch=master
+    :target: https://travis-ci.org/peterlisak/py-romanify
 
 Convertor of roman/arabic numerals 
 https://pypi.python.org/pypi/py-romanify
