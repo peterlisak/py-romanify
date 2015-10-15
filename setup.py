@@ -10,7 +10,7 @@ for doc_file in ('installation.rst', 'usage.rst', 'changelog.rst'):
 
 setup(
     name='py-romanify',
-    version='0.1.4',
+    version='1.0.0',
     description='Python Roman/Arabic numbers convertor',
     long_description=long_description,
     author='Peter Lisak',
@@ -20,12 +20,12 @@ setup(
     setup_requires=["nose", "flake8", "setuptools-lint"],
     test_suite="tests",
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
-        'License :: OSI Approved :: \
-        GNU Lesser General Public License v2 or later (LGPLv2+)',
+        'License :: OSI Approved :: ' +
+            'GNU Lesser General Public License v2 or later (LGPLv2+)',
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: POSIX',
