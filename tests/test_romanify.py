@@ -107,6 +107,9 @@ class TestSimple(unittest.TestCase):
         self.assertRaises(ValueError, romanify.roman2arabic, 'LM')
         self.assertRaises(ValueError, romanify.roman2arabic, 'DM')
 
+        self.assertRaises(ValueError, romanify.roman2arabic, 'MIM')
+        self.assertRaises(ValueError, romanify.roman2arabic, 'IMM')
+
     def test_repeating_roman_numerals_error(self):
         # too much numeral repeating
         self.assertRaises(ValueError, romanify.roman2arabic, 'IIII')
@@ -115,3 +118,13 @@ class TestSimple(unittest.TestCase):
         self.assertRaises(ValueError, romanify.roman2arabic, 'LL')
         self.assertRaises(ValueError, romanify.roman2arabic, 'CCCC')
         self.assertRaises(ValueError, romanify.roman2arabic, 'DD')
+
+    def test_interesting_roman_numerals(self):
+        # number of the beast
+        self.assertEqual(romanify.roman2arabic('DCLXVI'), 666)
+        # least number of all roman numerals
+        self.assertEqual(romanify.roman2arabic('MCDXLIV'), 1444)
+        # descending roman numerals
+        self.assertEqual(romanify.roman2arabic('MDCLXVI'), 1666)
+        # not MIM
+        self.assertEqual(romanify.roman2arabic('MCMXCIX'), 1999)
